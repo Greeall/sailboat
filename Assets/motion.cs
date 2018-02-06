@@ -1,16 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class motion : MonoBehaviour {
 
+	public wind a;
 
 	public Sprite sailOn;
 	public Sprite sailOff;
 
 	void Start () 
 	{
-		//StartCoroutine (Debbubby());
+		
 	}
 
 	void Update () 
@@ -33,9 +35,20 @@ public class motion : MonoBehaviour {
 
 	void StartMotion()
 	{
-		float cosine = Mathf.Cos (angle.angleOfDirection * Mathf.Deg2Rad);
-		float sinus = Mathf.Sin (angle.angleOfDirection * Mathf.Deg2Rad);
-		transform.Translate (Time.deltaTime * new Vector3(cosine, sinus));
+		float cosine = Mathf.Cos (wind.angleOfDirection * Mathf.Deg2Rad);
+		float sinus = Mathf.Sin (wind.angleOfDirection * Mathf.Deg2Rad);
+		transform.Translate (Time.deltaTime * a.speed * new Vector3(cosine, sinus));
 	}
 		
+	void OnTriggerEnter2D(Collider2D coll) 
+	{
+		StopMotion ();
+		endlevel.ActionAfterWin ();
+	}
+
+	void StopMotion ()
+	{
+		a.offChange = true;
+		a.speed = 0f;
+	}
 }
