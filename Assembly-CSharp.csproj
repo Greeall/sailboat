@@ -60,6 +60,8 @@
      <Compile Include="Assets\wind.cs" />
      <Compile Include="Assets\wind1.cs" />
      <Compile Include="Assets\wind2.cs" />
+     <Compile Include="Assets\wind3.cs" />
+     <Compile Include="Assets\wind4.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

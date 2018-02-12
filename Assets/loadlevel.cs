@@ -11,6 +11,7 @@ public class loadlevel : MonoBehaviour {
 
 	void Start () 
 	{
+		PlayerPrefs.SetInt ("isAccess1", 1);
 		DisplayLevels ();
 	}
 	
@@ -30,10 +31,16 @@ public class loadlevel : MonoBehaviour {
 			GameObject b = Instantiate(buttonPrefab, new Vector3(150f + i, 2.5f, 0f), transform.rotation) as GameObject;
 			b.transform.SetParent (GameObject.Find ("Canvas").transform, false);
 			b.GetComponentInChildren<Text> ().text = number.ToString ();
-			AddListener (b.GetComponent<Button>(), number);
+			Debug.Log (PlayerPrefs.GetInt ("isAccess" + number, 0));
+			if (PlayerPrefs.GetInt ("isAccess" + number, 0) == 1) 
+			{
+				AddListener (b.GetComponent<Button>(), number);
+			}
+
 			i += 150f;
 			number++;
 		}
+		PlayerPrefs.SetInt ("levelsCount", --number); //write to device's memory quantity levels
 	}
 
 	void AddListener(Button but, int number)

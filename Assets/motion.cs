@@ -18,7 +18,7 @@ public class motion : MonoBehaviour {
 	void Update () 
 	{
 		
-		if (Input.GetKeyDown ("space")) 
+		if (Input.GetKeyDown ("space") || (Input.touchCount == 1 && Input.GetTouch(0).phase == TouchPhase.Began)) 
 			SwitchSail ();
 
 		if (GetComponent<SpriteRenderer> ().sprite == sailOn)
@@ -42,8 +42,17 @@ public class motion : MonoBehaviour {
 		
 	void OnTriggerEnter2D(Collider2D coll) 
 	{
-		StopMotion ();
-		endlevel.ActionAfterWin ();
+		if (coll.name == "goal") 
+		{
+			StopMotion ();
+			endlevel.ActionAfterWin ();
+		}
+
+		if (coll.name == "obstacle") 
+		{
+			StopMotion ();
+			endlevel.ActionAfterLose ();
+		}
 	}
 
 	void StopMotion ()
