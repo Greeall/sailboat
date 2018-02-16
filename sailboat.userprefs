@@ -1,13 +1,17 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\endlevel.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Endlevel.cs">
     <Files>
-      <File FileName="Assets\motion.cs" Line="50" Column="3" />
-      <File FileName="Assets\timer.cs" Line="1" Column="1" />
-      <File FileName="Assets\wind.cs" Line="1" Column="1" />
-      <File FileName="Assets\endlevel.cs" Line="50" Column="28" />
-      <File FileName="Assets\loadlevel.cs" Line="37" Column="52" />
-      <File FileName="Assets\wind2.cs" Line="1" Column="1" />
+      <File FileName="Assets\Motion.cs" Line="1" Column="1" />
+      <File FileName="Assets\Timer.cs" Line="1" Column="1" />
+      <File FileName="Assets\Wind.cs" Line="1" Column="1" />
+      <File FileName="Assets\Endlevel.cs" Line="19" Column="16" />
+      <File FileName="Assets\Loadlevel.cs" Line="1" Column="1" />
+      <File FileName="Assets\Wind2.cs" Line="1" Column="1" />
+      <File FileName="Assets\Wind1.cs" Line="1" Column="1" />
+      <File FileName="Assets\Wind3.cs" Line="1" Column="1" />
+      <File FileName="Assets\Wind4.cs" Line="1" Column="1" />
+      <File FileName="Assets\Obstacles.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

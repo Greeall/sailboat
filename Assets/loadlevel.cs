@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class loadlevel : MonoBehaviour {
+public class Loadlevel : MonoBehaviour {
 
 	public GameObject buttonPrefab;
 	public List <string> levels;
@@ -52,6 +52,6 @@ public class loadlevel : MonoBehaviour {
 	public void LoadLevel(int number)
 	{
 		SceneManager.LoadScene ("level" + number, LoadSceneMode.Single);
-		endlevel.nextLevel = number;
+		Endlevel.nextLevel = number;
 	}
 }

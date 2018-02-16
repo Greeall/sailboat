@@ -51,17 +51,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\actionafterlevel.cs" />
-     <Compile Include="Assets\endlevel.cs" />
-     <Compile Include="Assets\levels.cs" />
-     <Compile Include="Assets\loadlevel.cs" />
-     <Compile Include="Assets\motion.cs" />
-     <Compile Include="Assets\timer.cs" />
-     <Compile Include="Assets\wind.cs" />
-     <Compile Include="Assets\wind1.cs" />
-     <Compile Include="Assets\wind2.cs" />
-     <Compile Include="Assets\wind3.cs" />
-     <Compile Include="Assets\wind4.cs" />
+     <Compile Include="Assets\Endlevel.cs" />
+     <Compile Include="Assets\Loadlevel.cs" />
+     <Compile Include="Assets\Motion.cs" />
+     <Compile Include="Assets\Obstacles.cs" />
+     <Compile Include="Assets\Timer.cs" />
+     <Compile Include="Assets\Wind.cs" />
+     <Compile Include="Assets\Wind1.cs" />
+     <Compile Include="Assets\Wind2.cs" />
+     <Compile Include="Assets\Wind3.cs" />
+     <Compile Include="Assets\Wind4.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class wind4 : wind {
+public class Wind4 : Wind {
 
 	public override IEnumerator ChangeDirection ()
 	{
@@ -45,7 +45,7 @@ public class wind4 : wind {
 				break;
 			}
 			transform.rotation = Quaternion.Euler (new Vector3 (0f, 0f, angleOfDirection - 180f));
-			yield return new WaitForSeconds (1f);
+			yield return new WaitForSeconds (0.3f);
 		}
 	}
 }

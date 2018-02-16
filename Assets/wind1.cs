@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class wind1 : wind {
+public class Wind1 : Wind {
 
 
 	public override IEnumerator ChangeDirection ()
@@ -24,20 +24,12 @@ public class wind1 : wind {
 				break;
 			case 2:
 				angleOfDirection = 45f;
-				//angleOfDirection += 1f * powerOfChange;
-				//if (angleOfDirection > 90)
-				//	angleOfDirection = 90f;
 				break;
 			case 3:
-				//angleOfDirection -= 1f * powerOfChange;
-				//if (angleOfDirection < 0)
-				//	angleOfDirection = 0f;
 				angleOfDirection = 120f;
 				break;
 			case 4:
 				angleOfDirection = 300f;
-				//if (angleOfDirection > 90)
-				//	angleOfDirection = 90f;
 				break;
 			case 5:
 				angleOfDirection = 180f;

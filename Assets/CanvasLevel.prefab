@@ -428,6 +428,7 @@ MonoBehaviour:
   winwindow: {fileID: 1549811485638242}
   restart: {fileID: 114951925715820886}
   next: {fileID: 114873179850589032}
+  quit: {fileID: 0}
   textScore: {fileID: 114516639812247624}
   textRecord: {fileID: 114827455457033280}
 --- !u!114 &114358715323694228
@@ -659,7 +660,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1549811485638242}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c637a845a76472743891ee2a8f25980b, type: 3}
+  m_Script: {fileID: 0}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &114873179850589032
@@ -804,8 +805,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 161684d2a5e777243ae8a82b3f8c8b51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  a: {fileID: 0}
+  wind: {fileID: 0}
   txt: {fileID: 114148584110395442}
+  motion: {fileID: 0}
 --- !u!222 &222083608310724382
 CanvasRenderer:
   m_ObjectHideFlags: 1

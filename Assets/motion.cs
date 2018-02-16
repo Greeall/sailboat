@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class motion : MonoBehaviour {
+public class Motion : MonoBehaviour {
 
-	public wind a;
+	public Wind wind;
 
 	public Sprite sailOn;
 	public Sprite sailOff;
@@ -35,9 +35,9 @@ public class motion : MonoBehaviour {
 
 	void StartMotion()
 	{
-		float cosine = Mathf.Cos (wind.angleOfDirection * Mathf.Deg2Rad);
-		float sinus = Mathf.Sin (wind.angleOfDirection * Mathf.Deg2Rad);
-		transform.Translate (Time.deltaTime * a.speed * new Vector3(cosine, sinus));
+		float cosine = Mathf.Cos (Wind.angleOfDirection * Mathf.Deg2Rad);
+		float sinus = Mathf.Sin (Wind.angleOfDirection * Mathf.Deg2Rad);
+		transform.Translate (Time.deltaTime * wind.speed * new Vector3(cosine, sinus));
 	}
 		
 	void OnTriggerEnter2D(Collider2D coll) 
@@ -45,19 +45,19 @@ public class motion : MonoBehaviour {
 		if (coll.name == "goal") 
 		{
 			StopMotion ();
-			endlevel.ActionAfterWin ();
+			Endlevel.ActionAfterWin ();
 		}
 
-		if (coll.name == "obstacle") 
+		if (coll.tag == "obstacle") 
 		{
 			StopMotion ();
-			endlevel.ActionAfterLose ();
+			Endlevel.ActionAfterLose ();
 		}
 	}
 
-	void StopMotion ()
+	public void StopMotion ()
 	{
-		a.offChange = true;
-		a.speed = 0f;
+		wind.offChange = true;
+		wind.speed = 0f;
 	}
 }

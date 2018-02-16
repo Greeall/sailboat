@@ -4,15 +4,16 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class endlevel : MonoBehaviour {
+public class Endlevel : MonoBehaviour {
 	
 	public GameObject winwindow;
 	public Button restart;
 	public Button next;
+	public Button quit;
 	public Text textScore;
 	public Text textRecord;
-	public static int nextLevel = 0;
-	public static endlevel singleton;
+	public static int nextLevel = 1;
+	public static Endlevel singleton;
 
 
 	// Use this for initialization
@@ -34,21 +35,26 @@ public class endlevel : MonoBehaviour {
 		singleton.textRecord.text = "record: " + PlayerPrefs.GetInt ("score" + nextLevel, 100);
 		singleton.restart.onClick.AddListener (() => Restart(nextLevel));
 
-		if(PlayerPrefs.GetInt("isAccess" + (nextLevel + 1)) == 1)
-			singleton.next.onClick.AddListener (() => NextLevel(nextLevel));
+		if (PlayerPrefs.GetInt ("isAccess" + (nextLevel + 1)) == 1) 
+		{
+			singleton.next.onClick.AddListener (() => NextLevel (nextLevel + 1));
+		}
+		singleton.quit.onClick.AddListener (() => Quit ());
 	}
 
 
 	public static void ActionAfterWin()
 	{
-		int currentScore = timer.time - timer.timeLeft - 1;
+		Debug.Log ("WINNNN");
+
+		int currentScore = Timer.time - Timer.timeLeft - 1;
 		int record = PlayerPrefs.GetInt ("score" + nextLevel, 100);
 
 		singleton.winwindow.SetActive(true);
 		singleton.textScore.text = "score: " + currentScore.ToString ();
 
 		if (currentScore < 100) {
-			PlayerPrefs.SetInt("isAccess" + (nextLevel + 1), 1);
+			PlayerPrefs.SetInt("isAccess" + (nextLevel + 1), 1); //open access for next level
 		}
 
 
@@ -61,12 +67,13 @@ public class endlevel : MonoBehaviour {
 		else
 			singleton.textRecord.text = "record: " + record.ToString();
 
-
-		if(PlayerPrefs.GetInt("isAccess" + (nextLevel + 1)) == 1)
-			singleton.next.onClick.AddListener (() => NextLevel(nextLevel));
+		Debug.Log ("number befor next level - " + nextLevel);
+		if (PlayerPrefs.GetInt ("isAccess" + (nextLevel + 1)) == 1) {
+			singleton.next.onClick.AddListener (() => NextLevel (nextLevel + 1));
+		}
 		
 		singleton.restart.onClick.AddListener (() => Restart(nextLevel));
-		
+		singleton.quit.onClick.AddListener (() => Quit ());
 	}
 
 	public static void Restart(int number)
@@ -77,14 +84,17 @@ public class endlevel : MonoBehaviour {
 	public static void NextLevel(int number)
 	{
 		int levelsCount = PlayerPrefs.GetInt ("levelsCount", 0);
-		if (number < levelsCount)
-			SceneManager.LoadScene ("level" + ++number, LoadSceneMode.Single);
+		nextLevel = number;                 				 //save current level
+		if (number <= levelsCount) {
+			SceneManager.LoadScene ("level" + number, LoadSceneMode.Single);
+			Debug.Log ("number in next level - " + number);
+		}
 		else 
 			SceneManager.LoadScene ("levels", LoadSceneMode.Single);
 			
 	}
 
-	public void Quit()
+	public static void Quit()
 	{
 		SceneManager.LoadScene ("levels", LoadSceneMode.Single);
 	}

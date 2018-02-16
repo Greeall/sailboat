@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class wind : MonoBehaviour {
+public class Wind : MonoBehaviour {
 
 	public static float angleOfDirection = 45f;
 	public float speed = 3f;
